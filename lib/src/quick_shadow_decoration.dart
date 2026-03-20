@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'inner_shadow_widget.dart';
+import 'quick_shadow_widget.dart';
 
 /// A convenient wrapper that combines [BoxDecoration] with [InnerShadow].
 ///
-/// Instead of nesting widgets manually, use [InnerShadowContainer] as a
+/// Instead of nesting widgets manually, use [QuickShadowContainer] as a
 /// drop-in replacement for [Container] with inner shadow support.
 ///
 /// ### Example
 /// ```dart
-/// InnerShadowContainer(
+/// QuickShadowContainer(
 ///   width: 160,
 ///   height: 160,
 ///   decoration: BoxDecoration(
@@ -22,7 +22,7 @@ import 'inner_shadow_widget.dart';
 ///   child: Icon(Icons.favorite, size: 40),
 /// )
 /// ```
-class InnerShadowContainer extends StatelessWidget {
+class QuickShadowContainer extends StatelessWidget {
   final double? width;
   final double? height;
   final BoxDecoration decoration;
@@ -31,7 +31,7 @@ class InnerShadowContainer extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final AlignmentGeometry? alignment;
 
-  const InnerShadowContainer({
+  const QuickShadowContainer({
     super.key,
     this.width,
     this.height,
@@ -44,11 +44,10 @@ class InnerShadowContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = decoration.borderRadius is BorderRadius
-        ? decoration.borderRadius as BorderRadius
-        : null;
+    final borderRadius =
+        decoration.borderRadius is BorderRadius ? decoration.borderRadius as BorderRadius : null;
 
-    return InnerShadow(
+    return QuickShadow(
       shadows: shadows,
       borderRadius: borderRadius,
       child: Container(

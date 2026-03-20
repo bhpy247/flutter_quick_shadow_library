@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:inner_shadow/innershadowpackage.dart';
+import 'package:quickshadowflutter/quickshadowflutter.dart';
 
 void main() {
-  runApp(const InnerShadowExampleApp());
+  runApp(const QuickShadowExampleApp());
 }
 
-class InnerShadowExampleApp extends StatelessWidget {
-  const InnerShadowExampleApp({super.key});
+class QuickShadowExampleApp extends StatelessWidget {
+  const QuickShadowExampleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'InnerShadow Demo',
+      title: 'QuickShadow Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: Colors.deepPurple, useMaterial3: true),
       home: const DemoHomePage(),
@@ -31,7 +31,7 @@ class DemoHomePage extends StatelessWidget {
         // backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: const Color(0xFFE0E5EC),
-          title: const Text('InnerShadow Demo'),
+          title: const Text('QuickShadow Demo'),
           bottom: const TabBar(
             isScrollable: true,
             tabs: [
@@ -43,7 +43,12 @@ class DemoHomePage extends StatelessWidget {
           ),
         ),
         body: const TabBarView(
-          children: [BasicShadowDemo(), NeumorphismDemo(), ButtonsDemo(), CardsDemo()],
+          children: [
+            BasicShadowDemo(),
+            NeumorphismDemo(),
+            ButtonsDemo(),
+            CardsDemo(),
+          ],
         ),
       ),
     );
@@ -65,7 +70,7 @@ class BasicShadowDemo extends StatelessWidget {
         children: [
           const _SectionTitle('Top-Left Shadow'),
           const SizedBox(height: 16),
-          InnerShadow(
+          QuickShadow(
             shadows: const [
               Shadow(
                 color: Color(0x66000000),
@@ -86,9 +91,13 @@ class BasicShadowDemo extends StatelessWidget {
           const SizedBox(height: 32),
           const _SectionTitle('Bottom-Right Shadow'),
           const SizedBox(height: 16),
-          InnerShadow(
+          QuickShadow(
             shadows: const [
-              Shadow(color: Color(0x66000000), blurRadius: 12, offset: Offset(-6, -6)),
+              Shadow(
+                color: Color(0x66000000),
+                blurRadius: 12,
+                offset: Offset(-6, -6),
+              ),
             ],
             borderRadius: BorderRadius.circular(16),
             child: Container(
@@ -103,13 +112,22 @@ class BasicShadowDemo extends StatelessWidget {
           const SizedBox(height: 32),
           const _SectionTitle('Circular Shape'),
           const SizedBox(height: 16),
-          InnerShadow(
-            shadows: const [Shadow(color: Color(0x66000000), blurRadius: 16, offset: Offset(0, 0))],
+          QuickShadow(
+            shadows: const [
+              Shadow(
+                color: Color(0x66000000),
+                blurRadius: 16,
+                offset: Offset(0, 0),
+              ),
+            ],
             borderRadius: BorderRadius.circular(75),
             child: Container(
               width: 150,
               height: 150,
-              decoration: const BoxDecoration(color: Color(0xFFE0E5EC), shape: BoxShape.circle),
+              decoration: const BoxDecoration(
+                color: Color(0xFFE0E5EC),
+                shape: BoxShape.circle,
+              ),
             ),
           ),
         ],
@@ -138,16 +156,23 @@ class NeumorphismDemo extends StatelessWidget {
           const _SectionTitle('Pressed / Inset Effect'),
           const SizedBox(height: 16),
           // Neumorphism "pressed" button using inner shadow
-          InnerShadow(
+          QuickShadow(
             shadows: const [
               Shadow(color: darkShadow, blurRadius: 10, offset: Offset(5, 5)),
-              Shadow(color: lightShadow, blurRadius: 10, offset: Offset(-5, -5)),
+              Shadow(
+                color: lightShadow,
+                blurRadius: 10,
+                offset: Offset(-5, -5),
+              ),
             ],
             borderRadius: BorderRadius.circular(20),
             child: Container(
               width: 160,
               height: 60,
-              decoration: BoxDecoration(color: bgColor, borderRadius: BorderRadius.circular(20)),
+              decoration: BoxDecoration(
+                color: bgColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
               alignment: Alignment.center,
               child: const Text(
                 'PRESSED',
@@ -162,24 +187,35 @@ class NeumorphismDemo extends StatelessWidget {
           const SizedBox(height: 32),
           const _SectionTitle('Inset Circle'),
           const SizedBox(height: 16),
-          InnerShadow(
+          QuickShadow(
             shadows: const [
               Shadow(color: darkShadow, blurRadius: 14, offset: Offset(6, 6)),
-              Shadow(color: lightShadow, blurRadius: 14, offset: Offset(-6, -6)),
+              Shadow(
+                color: lightShadow,
+                blurRadius: 14,
+                offset: Offset(-6, -6),
+              ),
             ],
             borderRadius: BorderRadius.circular(80),
             child: Container(
               width: 160,
               height: 160,
-              decoration: const BoxDecoration(color: bgColor, shape: BoxShape.circle),
+              decoration: const BoxDecoration(
+                color: bgColor,
+                shape: BoxShape.circle,
+              ),
               alignment: Alignment.center,
-              child: const Icon(Icons.play_arrow_rounded, size: 50, color: Color(0xFF6E7F9B)),
+              child: const Icon(
+                Icons.play_arrow_rounded,
+                size: 50,
+                color: Color(0xFF6E7F9B),
+              ),
             ),
           ),
           const SizedBox(height: 32),
           const _SectionTitle('Inset Text Field'),
           const SizedBox(height: 16),
-          InnerShadow(
+          QuickShadow(
             shadows: const [
               Shadow(color: darkShadow, blurRadius: 8, offset: Offset(4, 4)),
               Shadow(color: lightShadow, blurRadius: 8, offset: Offset(-4, -4)),
@@ -188,10 +224,16 @@ class NeumorphismDemo extends StatelessWidget {
             child: Container(
               width: double.infinity,
               height: 56,
-              decoration: BoxDecoration(color: bgColor, borderRadius: BorderRadius.circular(14)),
+              decoration: BoxDecoration(
+                color: bgColor,
+                borderRadius: BorderRadius.circular(14),
+              ),
               padding: const EdgeInsets.symmetric(horizontal: 16),
               alignment: Alignment.centerLeft,
-              child: const Text('Search...', style: TextStyle(color: Color(0xFF9AA5B4))),
+              child: const Text(
+                'Search...',
+                style: TextStyle(color: Color(0xFF9AA5B4)),
+              ),
             ),
           ),
         ],
@@ -229,10 +271,14 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
             child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 100),
               child: _isPressed
-                  ? InnerShadow(
+                  ? QuickShadow(
                       key: const ValueKey('pressed'),
                       shadows: const [
-                        Shadow(color: Color(0x66000000), blurRadius: 10, offset: Offset(4, 4)),
+                        Shadow(
+                          color: Color(0x66000000),
+                          blurRadius: 10,
+                          offset: Offset(4, 4),
+                        ),
                       ],
                       borderRadius: BorderRadius.circular(14),
                       child: const _ButtonBox(label: 'PRESSED ✓'),
@@ -245,7 +291,11 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
                         color: const Color(0xFFE0E5EC),
                         borderRadius: BorderRadius.circular(14),
                         boxShadow: const [
-                          BoxShadow(color: Color(0xFFA3B1C6), blurRadius: 10, offset: Offset(5, 5)),
+                          BoxShadow(
+                            color: Color(0xFFA3B1C6),
+                            blurRadius: 10,
+                            offset: Offset(5, 5),
+                          ),
                           BoxShadow(
                             color: Color(0xFFFFFFFF),
                             blurRadius: 10,
@@ -266,18 +316,27 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
             ),
           ),
           const SizedBox(height: 40),
-          const _SectionTitle('InnerShadowContainer Shorthand'),
+          const _SectionTitle('QuickShadowContainer Shorthand'),
           const SizedBox(height: 16),
-          InnerShadowContainer(
+          QuickShadowContainer(
             width: 200,
             height: 56,
             decoration: BoxDecoration(
               color: const Color(0xFFE0E5EC),
               borderRadius: BorderRadius.circular(14),
             ),
-            shadows: const [Shadow(color: Color(0x55000000), blurRadius: 10, offset: Offset(4, 4))],
+            shadows: const [
+              Shadow(
+                color: Color(0x55000000),
+                blurRadius: 10,
+                offset: Offset(4, 4),
+              ),
+            ],
             alignment: Alignment.center,
-            child: const Text('InnerShadowContainer', style: TextStyle(color: Color(0xFF6E7F9B))),
+            child: const Text(
+              'QuickShadowContainer',
+              style: TextStyle(color: Color(0xFF6E7F9B)),
+            ),
           ),
         ],
       ),
@@ -327,10 +386,18 @@ class CardsDemo extends StatelessWidget {
         children: [
           const _SectionTitle('Inset Card'),
           const SizedBox(height: 16),
-          InnerShadow(
+          QuickShadow(
             shadows: const [
-              Shadow(color: Color(0x55000000), blurRadius: 14, offset: Offset(6, 6)),
-              Shadow(color: Color(0xAAFFFFFF), blurRadius: 14, offset: Offset(-6, -6)),
+              Shadow(
+                color: Color(0x55000000),
+                blurRadius: 14,
+                offset: Offset(6, 6),
+              ),
+              Shadow(
+                color: Color(0xAAFFFFFF),
+                blurRadius: 14,
+                offset: Offset(-6, -6),
+              ),
             ],
             borderRadius: BorderRadius.circular(20),
             child: Container(
@@ -353,7 +420,7 @@ class CardsDemo extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'This card uses InnerShadow to create an inset/pressed effect. Works with any BorderRadius.',
+                    'This card uses QuickShadow to create an inset/pressed effect. Works with any BorderRadius.',
                     style: TextStyle(color: Color(0xFF718096)),
                   ),
                 ],
@@ -392,10 +459,14 @@ class _StatCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InnerShadow(
+    return QuickShadow(
       shadows: const [
         Shadow(color: Color(0x44000000), blurRadius: 10, offset: Offset(4, 4)),
-        Shadow(color: Color(0x88FFFFFF), blurRadius: 10, offset: Offset(-4, -4)),
+        Shadow(
+          color: Color(0x88FFFFFF),
+          blurRadius: 10,
+          offset: Offset(-4, -4),
+        ),
       ],
       borderRadius: BorderRadius.circular(16),
       child: Container(
@@ -415,7 +486,10 @@ class _StatCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 4),
-            Text(label, style: const TextStyle(fontSize: 12, color: Color(0xFF9AA5B4))),
+            Text(
+              label,
+              style: const TextStyle(fontSize: 12, color: Color(0xFF9AA5B4)),
+            ),
           ],
         ),
       ),

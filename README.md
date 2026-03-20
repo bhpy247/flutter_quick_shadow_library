@@ -23,7 +23,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  inner_shadow: ^0.0.1
+  quick_shadow: ^0.0.1
 ```
 
 Run:
@@ -35,7 +35,7 @@ flutter pub get
 Then import in your Dart file:
 
 ```dart
-import 'package:inner_shadow/inner_shadow.dart';
+import 'package:quick_shadow/quick_shadow.dart';
 ```
 
 ---
@@ -173,7 +173,7 @@ InnerShadow(
 ## Contributing
 
 Found a bug or want a new feature?
-Open an issue or PR at [GitHub](https://github.com/YOURUSERNAME/inner_shadow) — contributions are welcome!
+Open an issue or PR at [GitHub](https://github.com/YOURUSERNAME/quick_shadow) — contributions are welcome!
 
 ## License
 

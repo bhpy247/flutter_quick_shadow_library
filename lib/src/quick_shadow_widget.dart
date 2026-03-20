@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 ///
 /// ### Basic Example
 /// ```dart
-/// InnerShadow(
+/// QuickShadow(
 ///   shadows: [
 ///     Shadow(color: Colors.black38, blurRadius: 10, offset: Offset(4, 4)),
 ///   ],
@@ -25,7 +25,7 @@ import 'package:flutter/material.dart';
 ///
 /// ### Neumorphism Example
 /// ```dart
-/// InnerShadow(
+/// QuickShadow(
 ///   shadows: [
 ///     Shadow(color: Colors.black26, blurRadius: 12, offset: Offset(6, 6)),
 ///     Shadow(color: Colors.white70, blurRadius: 12, offset: Offset(-6, -6)),
@@ -41,7 +41,7 @@ import 'package:flutter/material.dart';
 ///   ),
 /// )
 /// ```
-class InnerShadow extends StatelessWidget {
+class QuickShadow extends StatelessWidget {
   /// The shadows to paint inside the widget.
   final List<Shadow> shadows;
 
@@ -51,7 +51,7 @@ class InnerShadow extends StatelessWidget {
   /// The widget to apply inner shadow on.
   final Widget child;
 
-  const InnerShadow({
+  const QuickShadow({
     super.key,
     required this.shadows,
     this.borderRadius,
@@ -61,7 +61,7 @@ class InnerShadow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      foregroundPainter: _InnerShadowPainter(
+      foregroundPainter: _QuickShadowPainter(
         shadows: shadows,
         borderRadius: borderRadius,
       ),
@@ -70,14 +70,11 @@ class InnerShadow extends StatelessWidget {
   }
 }
 
-class _InnerShadowPainter extends CustomPainter {
+class _QuickShadowPainter extends CustomPainter {
   final List<Shadow> shadows;
   final BorderRadius? borderRadius;
 
-  _InnerShadowPainter({
-    required this.shadows,
-    this.borderRadius,
-  });
+  _QuickShadowPainter({required this.shadows, this.borderRadius});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -111,7 +108,7 @@ class _InnerShadowPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_InnerShadowPainter oldDelegate) {
+  bool shouldRepaint(_QuickShadowPainter oldDelegate) {
     return oldDelegate.shadows != shadows || oldDelegate.borderRadius != borderRadius;
   }
 }
