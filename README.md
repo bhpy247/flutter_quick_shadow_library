@@ -2,7 +2,7 @@
 
 A Flutter package that adds **inner shadow** support to any widget — `Container`, `Button`, `Card`, and more.
 
-Flutter's built-in `BoxDecoration` only supports **outer** shadows. This package fills that gap with a simple, performant `InnerShadow` widget using a Canvas-based even-odd path technique.
+Flutter's built-in `BoxDecoration` only supports **outer** shadows. This package fills that gap with a simple, performant `QuickShadow` widget using a Canvas-based even-odd path technique.
 
 ---
 
@@ -12,7 +12,7 @@ Flutter's built-in `BoxDecoration` only supports **outer** shadows. This package
 - ✅ Supports **BorderRadius** (rounded corners & circles)
 - ✅ **Multiple shadows** on a single widget
 - ✅ Perfect for **Neumorphism UI**
-- ✅ `InnerShadowContainer` convenience widget
+- ✅ `QuickShadowContainer` convenience widget
 - ✅ Zero external dependencies (pure Flutter)
 
 ---
@@ -45,7 +45,7 @@ import 'package:quick_shadow/quick_shadow.dart';
 ### Basic Inner Shadow
 
 ```dart
-InnerShadow(
+QuickShadow(
   shadows: [
     Shadow(
       color: Colors.black38,
@@ -70,7 +70,7 @@ InnerShadow(
 ### Neumorphism — Pressed Effect
 
 ```dart
-InnerShadow(
+QuickShadow(
   shadows: [
     Shadow(color: Colors.black26, blurRadius: 12, offset: Offset(6, 6)),
     Shadow(color: Colors.white70, blurRadius: 12, offset: Offset(-6, -6)),
@@ -91,10 +91,10 @@ InnerShadow(
 
 ---
 
-### InnerShadowContainer (Shorthand)
+### QuickShadowContainer (Shorthand)
 
 ```dart
-InnerShadowContainer(
+QuickShadowContainer(
   width: 200,
   height: 60,
   decoration: BoxDecoration(
@@ -118,7 +118,7 @@ InnerShadowContainer(
 ### Circular Shape
 
 ```dart
-InnerShadow(
+QuickShadow(
   shadows: [
     Shadow(color: Colors.black26, blurRadius: 14, offset: Offset(6, 6)),
   ],
@@ -138,7 +138,7 @@ InnerShadow(
 
 ## API Reference
 
-### `InnerShadow`
+### `QuickShadow`
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
@@ -146,7 +146,7 @@ InnerShadow(
 | `borderRadius` | `BorderRadius?` | ❌ | Match with child's border radius for proper clipping |
 | `child` | `Widget` | ✅ | The widget to apply shadow to |
 
-### `InnerShadowContainer`
+### `QuickShadowContainer`
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
