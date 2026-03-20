@@ -20,9 +20,9 @@ Flutter's built-in `BoxDecoration` only supports **outer** shadows. This package
      ![Neumorphism](screenshots/neumorphism.jpg)
 -->
 
-| Basic Shadow | Neumorphism | Button | Cards                              |
-|---|---|--------------------------------------|------------------------------------|
-| ![Basic](screenshots/basic.jpg) | ![Neumorphism](screenshots/neumorphism.jpg) | ![Circular](screenshots/buttons.jpg) | ![Circular](screenshots/cards.jpg) |
+| Basic Shadow | Neumorphism | Buttons | Cards |
+|---|---|------------------------------------|---------------------------------|
+| ![Basic](screenshots/basic.jpg) | ![Neumorphism](screenshots/neumorphism.jpg) | ![Button](screenshots/buttons.jpg) | ![Cards](screenshots/cards.jpg) |
 
 ---
 
