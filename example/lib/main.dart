@@ -11,7 +11,7 @@ class QuickShadowExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'QuickShadow Demo',
+      title: 'Quick Shadow Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: Colors.deepPurple, useMaterial3: true),
       home: const DemoHomePage(),
@@ -31,7 +31,7 @@ class DemoHomePage extends StatelessWidget {
         // backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: const Color(0xFFE0E5EC),
-          title: const Text('QuickShadow Demo'),
+          title: const Text('Quick Shadow Demo'),
           bottom: const TabBar(
             isScrollable: true,
             tabs: [
@@ -148,6 +148,8 @@ class NeumorphismDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    print("MediaQuery.of(context).size.width: Mobile: ${MediaQuery.of(context).size.width}");
     return SingleChildScrollView(
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -221,18 +223,15 @@ class NeumorphismDemo extends StatelessWidget {
               Shadow(color: lightShadow, blurRadius: 8, offset: Offset(-4, -4)),
             ],
             borderRadius: BorderRadius.circular(14),
-            child: Container(
-              width: double.infinity,
-              height: 56,
-              decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: BorderRadius.circular(14),
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              alignment: Alignment.centerLeft,
-              child: const Text(
-                'Search...',
-                style: TextStyle(color: Color(0xFF9AA5B4)),
+            child: TextFormField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Enter the text",
+                constraints: BoxConstraints(
+                  maxWidth: size.width > 400 ? size.width * 0.2 : size.width * 0.6,
+                  maxHeight: 156,
+                ),
+                contentPadding: EdgeInsets.all(18),
               ),
             ),
           ),

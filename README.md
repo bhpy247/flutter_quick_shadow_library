@@ -4,6 +4,26 @@ A Flutter package that adds **inner shadow** support to any widget — `Containe
 
 Flutter's built-in `BoxDecoration` only supports **outer** shadows. This package fills that gap with a simple, performant `QuickShadow` widget using a Canvas-based even-odd path technique.
 
+🚀 **[Try it Live](https://quickshadow.netlify.app)**
+
+---
+
+## Screenshots
+
+<!-- 
+  HOW TO ADD SCREENSHOTS:
+  1. Take screenshots of your example app running
+  2. Create a folder called `screenshots/` in your repo root
+  3. Upload screenshots there on GitHub
+  4. Replace the lines below with your actual image paths like:
+     ![Basic Shadow](screenshots/basic_shadow.jpg)
+     ![Neumorphism](screenshots/neumorphism.jpg)
+-->
+
+| Basic Shadow | Neumorphism | Button | Cards                              |
+|---|---|--------------------------------------|------------------------------------|
+| ![Basic](screenshots/basic.jpg) | ![Neumorphism](screenshots/neumorphism.jpg) | ![Circular](screenshots/buttons.jpg) | ![Circular](screenshots/cards.jpg) |
+
 ---
 
 ## Features
@@ -23,7 +43,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  quick_shadow: ^0.0.1
+  quick_shadow: ^0.0.3
 ```
 
 Run:
@@ -46,22 +66,22 @@ import 'package:quick_shadow/quick_shadow.dart';
 
 ```dart
 QuickShadow(
-  shadows: [
-    Shadow(
-      color: Colors.black38,
-      blurRadius: 10,
-      offset: Offset(4, 4),
-    ),
-  ],
-  borderRadius: BorderRadius.circular(16),
-  child: Container(
-    width: 150,
-    height: 150,
-    decoration: BoxDecoration(
-      color: Color(0xFFE0E0E0),
-      borderRadius: BorderRadius.circular(16),
-    ),
-  ),
+shadows: [
+Shadow(
+color: Colors.black38,
+blurRadius: 10,
+offset: Offset(4, 4),
+),
+],
+borderRadius: BorderRadius.circular(16),
+child: Container(
+width: 150,
+height: 150,
+decoration: BoxDecoration(
+color: Color(0xFFE0E0E0),
+borderRadius: BorderRadius.circular(16),
+),
+),
 )
 ```
 
@@ -71,21 +91,21 @@ QuickShadow(
 
 ```dart
 QuickShadow(
-  shadows: [
-    Shadow(color: Colors.black26, blurRadius: 12, offset: Offset(6, 6)),
-    Shadow(color: Colors.white70, blurRadius: 12, offset: Offset(-6, -6)),
-  ],
-  borderRadius: BorderRadius.circular(20),
-  child: Container(
-    width: 160,
-    height: 60,
-    decoration: BoxDecoration(
-      color: Color(0xFFE0E5EC),
-      borderRadius: BorderRadius.circular(20),
-    ),
-    alignment: Alignment.center,
-    child: Text('PRESSED'),
-  ),
+shadows: [
+Shadow(color: Colors.black26, blurRadius: 12, offset: Offset(6, 6)),
+Shadow(color: Colors.white70, blurRadius: 12, offset: Offset(-6, -6)),
+],
+borderRadius: BorderRadius.circular(20),
+child: Container(
+width: 160,
+height: 60,
+decoration: BoxDecoration(
+color: Color(0xFFE0E5EC),
+borderRadius: BorderRadius.circular(20),
+),
+alignment: Alignment.center,
+child: Text('PRESSED'),
+),
 )
 ```
 
@@ -95,21 +115,21 @@ QuickShadow(
 
 ```dart
 QuickShadowContainer(
-  width: 200,
-  height: 60,
-  decoration: BoxDecoration(
-    color: Color(0xFFE0E5EC),
-    borderRadius: BorderRadius.circular(14),
-  ),
-  shadows: [
-    Shadow(
-      color: Colors.black26,
-      blurRadius: 10,
-      offset: Offset(4, 4),
-    ),
-  ],
-  alignment: Alignment.center,
-  child: Text('Hello Inner Shadow'),
+width: 200,
+height: 60,
+decoration: BoxDecoration(
+color: Color(0xFFE0E5EC),
+borderRadius: BorderRadius.circular(14),
+),
+shadows: [
+Shadow(
+color: Colors.black26,
+blurRadius: 10,
+offset: Offset(4, 4),
+),
+],
+alignment: Alignment.center,
+child: Text('Hello Inner Shadow'),
 )
 ```
 
@@ -119,18 +139,18 @@ QuickShadowContainer(
 
 ```dart
 QuickShadow(
-  shadows: [
-    Shadow(color: Colors.black26, blurRadius: 14, offset: Offset(6, 6)),
-  ],
-  borderRadius: BorderRadius.circular(75),
-  child: Container(
-    width: 150,
-    height: 150,
-    decoration: BoxDecoration(
-      color: Color(0xFFE0E5EC),
-      shape: BoxShape.circle,
-    ),
-  ),
+shadows: [
+Shadow(color: Colors.black26, blurRadius: 14, offset: Offset(6, 6)),
+],
+borderRadius: BorderRadius.circular(75),
+child: Container(
+width: 150,
+height: 150,
+decoration: BoxDecoration(
+color: Color(0xFFE0E5EC),
+shape: BoxShape.circle,
+),
+),
 )
 ```
 
